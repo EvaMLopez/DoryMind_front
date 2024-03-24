@@ -1,9 +1,12 @@
 <script setup>
-import MyTask from '../components/MyTasksComponent.vue'
+import EditTask from '../components/EditTaskComponent.vue'
 </script>
 
 <template>
-<MyTask />
+
+    <RouterView />
+    <EditTask :taskId="this.$route.params.id" />
+
 </template>
 
 <style lang="scss">
@@ -37,4 +40,3 @@ body {
     }
 }
 </style>
-   

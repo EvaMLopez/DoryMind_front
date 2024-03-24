@@ -1,22 +1,8 @@
 <script setup>
 import Navbar from '../components/NavbarComponent.vue'
-
 import { ref } from 'vue';
 import FullCalendar from '@fullcalendar/vue3';
 import dayGridPlugin from '@fullcalendar/daygrid';
-
-/* const calendarOptions = ref({
- plugins: [dayGridPlugin],
- initialView: 'dayGridMonth',
- weekends: false,
- events: [
-    { title: 'Meeting', start: new Date() }
- ],
- // Ajusta el número de filas y columnas para reducir el tamaño del calendario
- height: 'auto', // Esto asegura que el calendario se ajuste al contenido
- aspectRatio: 1.35, // Ajusta la relación de aspecto del calendario
- // Puedes ajustar otras opciones según sea necesario
-}); */
 
 const calendarOptions = ref({
  plugins: [dayGridPlugin],
@@ -26,12 +12,11 @@ const calendarOptions = ref({
     { title: 'Meeting', start: new Date() }
  ],
  headerToolbar: {
-    left: 'prev,next', // Incluye solo los botones de navegación
-    center: 'title', // Incluye el título del mes
-    right: '' // No incluye nada en el lado derecho
+    left: 'prev,next', 
+    center: 'title', 
+    right: ''
  }
 });
-
 </script>
 
 <template>
@@ -41,9 +26,9 @@ const calendarOptions = ref({
                 <Navbar />    
             </div>
             <div class="container_options">
-                <button>Mis tareas</button>
-                <button>Todas las tareas</button>
-                <button>Añadir tarea</button>
+                <RouterLink class="nav-link" to="/my-tasks"><button>Mis tareas</button></RouterLink>
+                <RouterLink class="nav-link" to="/all-tasks"><button>Todas las tareas</button></RouterLink>
+                <RouterLink class="nav-link" to="/new-task"><button>Añadir tarea</button></RouterLink>
                 <button>Buscar</button>
                 <button>Añadir miembro</button>
                 <div class="calendar">
@@ -66,53 +51,44 @@ body {
         background-color: rgba(244, 244, 234, 0.8); 
         width: 90%;    
         padding: 1rem;
-        margin: 1rem auto;
-        
-        button {           
-            margin-bottom: 2rem;
-            font-size: 16px;
-            text-align: center;
-            border-radius: 0.5rem;
-            font-family: "Irish Grover", system-ui;            
-            width: 100%;    
-            height: 2rem; 
-            font-size: 16px;
-            border: 2px solid #8F0881;            
-            background-color: rgba(209, 218, 28, 0.6);
-        }
+        margin: 1rem auto;       
     }
+
     .calendar {
-        width: 50%; /* Ajusta el ancho según sea necesario */
-        max-width: 400px; /* Establece un ancho máximo para evitar que el calendario sea demasiado grande en pantallas grandes */
-        margin: 0 auto; /* Centra el calendario horizontalmente */
+        width: 50%; 
+        max-width: 400px; 
+        margin: 0 auto; 
         font-family: "Irish Grover", system-ui;
         
         .fc-daygrid-day-top {
-            padding: 1px 20px; // Ajusta el padding para reducir la altura
+            padding: 1px 20px; 
             font-size: 10px;
         }
 
         .fc-daygrid-day {
-            padding: 0; // Ajusta el padding para reducir la altura
-            font-size: 8px; // Ajusta el tamaño de la fuente para reducir la altura
+            padding: 0; 
+            font-size: 8px; 
         }
         
         .fc-header-toolbar {
             .fc-toolbar-title {
-                font-size: 17px; // Ajusta el tamaño del texto del nombre del mes y el año
+                font-size: 17px; 
+                border: none;
+                background-color: rgba(244, 244, 234, 0);
+                color: rgb(33, 81, 212);
             }
             .fc-today-button {
-                font-size: 10px; // Ajusta el tamaño del texto de "today"
+                font-size: 10px; 
             }
         }
 
         .fc-button {
-            font-size: 8px; // Ajusta el tamaño del texto de las flechas
+            font-size: 8px; 
         }
 
         @media (max-width: 600px) {        
-            width: 80%; /* Ajusta el ancho para pantallas pequeñas */
-            max-width: none; /* Elimina el ancho máximo para pantallas pequeñas */
+            width: 80%; 
+            max-width: none;
         }
     }
 }
