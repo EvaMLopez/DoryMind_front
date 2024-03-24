@@ -1,22 +1,23 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
+import Header from './components/HeaderComponent.vue';
+import Footer from './components/FooterComponent.vue';
 </script>
 
 <template>
-  <header> 
-
-    <div class="wrapper">
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
+ <div id="app">
+  <Header />   
   <RouterView />
+  <Footer />
+ </div>
 </template>
 
-<style scoped>
+<style>
 
+/* body {
+  background-image: url('../assets/images/Dory_back.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ */
 </style>

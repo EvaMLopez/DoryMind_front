@@ -1,6 +1,9 @@
 import './assets/main.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'primevue/resources/themes/saga-blue/theme.css'; 
+import 'primevue/resources/primevue.min.css'; 
+import 'primeicons/primeicons.css'; 
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
