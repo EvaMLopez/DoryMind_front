@@ -1,37 +1,3 @@
-<!-- <script>
-import { useRouter } from 'vue-router';
-
-export default {
-  data() {
-    return {
-      username: '',
-      password: '',
-      router: useRouter(),  
-    }
-  },
-  methods: {
-    async login() {
-      try {
-        const response = await fetch('http://localhost:8080/api/v1/login');
-        if (!response.ok) {
-          alert(`HTTP error! status: ${response.status}`);
-        } else {
-          const employees = await response.json();
-          const employee = employees.find(emp => emp.name === this.username && emp.password === this.password);
-          if (employee) {
-            this.router.push('/dashboard'); 
-          } else {
-            alert("Usuario o contraseña incorrecta.");
-          }
-        }
-      } catch (error) {
-        alert(`Fetch error: ${error}`);
-      }
-    }
-  }
-}
-</script> -->
-
 <script>
 import axios from 'axios';
 import { useAuthStore } from '@/stores/authStore'; 
@@ -97,8 +63,6 @@ import router from '@/router/index';
   <div>
     <p class="register"><router-link to="/register">Regístrate</router-link></p>
   </div>
-
-  <!-- <footer>Copyright © 2024 ​| Todos los derechos reservados</footer> -->
 </template>
 
 <style lang="scss">
@@ -154,13 +118,4 @@ body {
       }
     }    
   }
-
-/* footer {
-  color: #000;
-  text-shadow: 1px 1px 0 #fff; 
-  font-size: 14px;
-  text-align: center;
-  font-family: "Racing Sans One", sans-serif;
-} */
-
 </style>

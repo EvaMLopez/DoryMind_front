@@ -21,9 +21,6 @@
 </script>
 
 <template>
-<!-- <img src="../assets/icnos/home.png" alt="home_icon" > -->
-<!-- <RouterLink class="nav-link" to="/dashboard">Home</RouterLink>-->
-<!-- <p class="logout"><router-link to="/login">Logout</router-link></p> -->
 <div class="route">
     <RouterLink class="nav-link" to="/" @click="userLogout">Logout</RouterLink>
     <RouterLink class="nav-link" to="/dashboard">

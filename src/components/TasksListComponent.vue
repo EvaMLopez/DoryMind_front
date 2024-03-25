@@ -1,58 +1,3 @@
-<!-- <template>
-    <div>
-      <h1>Tareas</h1>
-      <button @click="createTask">Crear tarea</button>
-      <ul>
-        <li v-for="task in tasks" :key="task.id">
-          {{ task.title }} - {{ task.completed ? 'Completada' : 'Pendiente' }}
-          <button @click="updateTask(task.id)">Actualizar</button>
-          <button @click="deleteTask(task.id)">Eliminar</button>
-        </li>
-      </ul>
-    </div>
-  </template>
-  
-  <script>
-  import api from '@/api';
-  
-  export default {
-    data() {
-      return {
-        tasks: [],
-      };
-    },
-    async created() {
-      this.tasks = await api.getTasks();
-    },
-    methods: {
-      async createTask() {
-        const newTask = {
-          title: 'Nueva tarea',
-          completed: false,
-        };
-        await api.createTask(newTask);
-        this.tasks = await api.getTasks();
-      },
-      async updateTask(id) {
-        const updatedTask = {
-          id,
-          title: 'Tarea actualizada',
-          completed: true,
-        };
-        await api.updateTask(id, updatedTask);
-        this.tasks = await api.getTasks();
-      },
-      async deleteTask(id) {
-        await api.deleteTask(id);
-        this.tasks = await api.getTasks();
-      },
-    },
-  };
-  </script> -->
-
-
-
-
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
@@ -114,8 +59,7 @@ router.push({ name: 'taskView', params: { id: id } });
           <img src="../assets/icnos/view.png" alt="Ver" @click="viewTask(task.idTask)">
         </div>
       </div>
-    </div>
-    <!-- <img src="../assets/icnos/pending.png" alt="Estado" @click="deleteTask(task.idTask)">  -->
+    </div>   
   </template>  
   
   <style lang="scss" scoped>
